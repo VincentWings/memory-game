@@ -1,0 +1,189 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffb784;
+    color: #b40000;
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 900;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: #ffd984;
+    padding: 32px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.1);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    background: #ff5e00;
+    cursor: default;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #ffb100;
+    font-size: 33px;
+}
+
+.deck .card.disable {
+    /* deactivate the click event */
+    pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.fa-star-black {
+    color: #2e3d49;
+}
+
+.fa-star-yellow {
+    color: #ffeb00;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.popup {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    background: rgba(255, 217, 132, 0.9);
+    text-align: center;
+}
+
+.popup .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: #b40000;
+    color: #fff;
+    font-size: 40px;
+}
+
+.close:hover {
+    background: #fff;
+    color: #b40000;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+.popup .score-panel .fa-star::before {
+    margin: 5px;
+    font-size: 60px;
+}
+
+.popup__text {
+    width: 100%;
+}
+
+.popup__btn {
+    background: #b40000;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 30px;
+    margin-top: 40px;
+}
+
+.popup__btn:hover {
+    background: #fff;
+    color: #b40000;
+}
+
+.popup .score-panel {
+    width: 100%;
+    text-align: center;
+}
