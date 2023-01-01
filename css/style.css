@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'soccer_scoreboardregular';
+    src: url('../fonts/soccer_scoreboard-webfont.woff') format('woff2'),
+        url('../fonts/soccer_scoreboard-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: #2d3047;
+    color: #fff;
+}
+
+.score {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    margin: 0 0 60px;
+    padding: 10px;
+    background: #050404;
+    font-family: 'soccer_scoreboardregular';
+    font-size: 24px;
+    color: #fff;
+}
+
+.score__title {
+    color: #fff;
+}
+
+#result {
+    color: red;
+}
+
+.board {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 600px;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% / 4) - 15px);
+    margin-bottom: 20px;
+    background-color: #485679;
+    color: #fff;
+    font-size: 40px;
+    border-radius: 20px;
+    aspect-ratio: 1 / 1;
+    cursor: pointer;
+    transition: all ease-in-out .2s;
+    overflow: hidden;
+}
+
+.card::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.225);
+    content: "";
+    opacity: 0;
+    transition: all ease-in-out .2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card:hover::after {
+    opacity: 1;
+}
+
+.card.hide {
+    background: #3b3d5c !important;
+    cursor: initial;
+}
+
+.card.hide::before {
+    display: none;
+}
+
+.card.hide:hover {
+    transform: none;
+}
+
+.hide:hover::after {
+    opacity: 0;
+}
+
+.congratulations,
+.stars {
+    width: 100%;
+    text-align: center;
+    font-size: 60px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        font-size: 60px;
+    }
+}
